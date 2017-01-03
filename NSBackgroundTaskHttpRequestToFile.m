@@ -50,9 +50,9 @@
 				NSLog(@"dowload error %@", error);
 				[self.delegate onError: [error description]];
 			}else{
-				NSLog(@"dowload error success!");
+				NSLog(@"dowload success!");
 				NSError *moveError;
-				[fileManager moveItemAtPath: filePath toPath: destination error: &moveError];
+				[fileManager moveItemAtPath: filePath.path toPath: destination error: &moveError];
 
 				if(moveError){
 					NSLog(@"error dowload move %@ to %@ -> %@", filePath, destination, moveError);
